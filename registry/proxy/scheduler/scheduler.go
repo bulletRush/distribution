@@ -173,6 +173,7 @@ func (ttles *TTLExpirationScheduler) add(r reference.Reference, ttl time.Duratio
 
 func (ttles *TTLExpirationScheduler) startTimer(entry *schedulerEntry, ttl time.Duration) *time.Timer {
 	return time.AfterFunc(ttl, func() {
+		return
 		ttles.Lock()
 		defer ttles.Unlock()
 
